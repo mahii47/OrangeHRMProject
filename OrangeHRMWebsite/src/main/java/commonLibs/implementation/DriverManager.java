@@ -1,0 +1,20 @@
+package commonLibs.implementation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DriverManager {
+	WebDriver driver;
+	public WebDriver initializeDriver()
+	{
+		WebDriverManager.chromedriver().setup(); //it will start the chrome.
+		driver = new ChromeDriver();
+		return driver;	
+	}
+	public void teardown()
+	{
+		driver.quit();		
+	}
+}
