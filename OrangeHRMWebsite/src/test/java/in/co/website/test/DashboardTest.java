@@ -36,5 +36,9 @@ public class DashboardTest{
 		dashboardPage.MaritalStatus("Married");
 		dashboardPage.Nationality("Indian");
 		dashboardPage.saveButton();
+		dashboardPage.Bloodtest("A+");
+		dashboardPage.Test_Field("12345");
+		dashboardPage.saveButton2();
+		
 	}
 }

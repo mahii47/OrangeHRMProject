@@ -3,17 +3,11 @@
 <suite name="Failed suite [TestSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="OrangeHRM Tests(failed)">
     <classes>
-      <class name="in.co.website.test.DashboardTest">
-        <methods>
-          <include name="ClickonMyList"/>
-          <include name="EnterForm"/>
-        </methods>
-      </class> <!-- in.co.website.test.DashboardTest -->
       <class name="in.co.website.test.LoginTest">
         <methods>
           <include name="invokeBrowser"/>
           <include name="closeBrowser"/>
-          <include name="ValidLogin"/>
+          <include name="loginTest" invocation-numbers="0"/>
         </methods>
       </class> <!-- in.co.website.test.LoginTest -->
     </classes>

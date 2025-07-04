@@ -11,6 +11,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import in.co.websitesPages.LoginPage;
 import commonLibs.implementation.DriverManager;
@@ -32,42 +33,58 @@ public class LoginTest {
 		loginPage = new LoginPage(driver); 
 	}
 	
-	@Test(priority = 1)
-	public void ValidLogin()
+	
+	@DataProvider(name = "loginData")
+	public Object[][]getLoginData()
 	{
-		driver.navigate().refresh();
-		loginPage.enterUsername("Admin");
-		loginPage.enterPassword("admin123");
-		loginPage.ClickButton();
-		String actualUrl = driver.getCurrentUrl();
-		String expectedUrl =  "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
-		Assert.assertEquals(actualUrl, expectedUrl,"Test passed");	
+		return new Object[][]
+				{
+			{"WrongUser","admin123",false},
+			{"Admin","admin1234",false},
+			{"12345","45678",false},
+			{"","admin123",false},
+			{"Admin","",false},
+			{"","",false},
+			{"Admin","admin123",true}
+			
+				};
 	}
 	
-	@Test(priority = 0)
-	public void InvalidLogin() throws InterruptedException {
-	    loginPage.enterUsername("Admin");
-	    loginPage.enterPassword("admin1234");
-	    loginPage.ClickButton();
-	    
-	    String actualError = loginPage.errorMessage();
-	    String expectedError = "Invalid credentials";
-	    Assert.assertEquals(actualError, expectedError, "Error message mismatch - Test Failed");
-	    System.out.println("Test Passed: Invalid login message displayed correctly");
-	    Thread.sleep(5000);
+	
+	@Test(dataProvider = "loginData")
+	public void loginTest(String username,String password,boolean expectedResult)
+	{
+		loginPage.enterUsername(username);
+		loginPage.enterPassword(password);
+		loginPage.ClickButton();
+		
+		boolean isLoginSuccessful;
+		
+		try {
+			String errormsg = loginPage.errorMessage();
+			if( errormsg.contains("Invalid credentials"))
+			{
+			isLoginSuccessful = false;
+			}
+			else {
+				isLoginSuccessful = true;
+			}
+		}
+		catch(Exception e)
+		{
+			isLoginSuccessful = true;
+		}
+		
+		  System.out.println("Testing with: " + username + " | Expected: " + expectedResult + " | Actual: " + isLoginSuccessful);
+
+		    Assert.assertEquals(isLoginSuccessful, expectedResult, 
+		        "Test failed for username: " + username);
 	}
 	
 	
 	@AfterTest
 	public void closeBrowser()
 	{
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	//	driverManager.teardown();
-	
+		driverManager.teardown();
 	}
 }

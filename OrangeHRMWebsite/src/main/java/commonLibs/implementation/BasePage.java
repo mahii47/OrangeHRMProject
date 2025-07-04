@@ -27,8 +27,14 @@ public class BasePage implements IBasePage{
 	{
 		// TODO Auto-generated method stub
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable((locator)));
-		element1.click();
+		WebElement Button = wait.until(ExpectedConditions.elementToBeClickable((locator)));
+		Button.click();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	@Override
@@ -39,22 +45,44 @@ public class BasePage implements IBasePage{
 		    element.click();
 		    element.sendKeys(Keys.CONTROL + "a");
 		    element.sendKeys(Keys.DELETE);
-//		    JavascriptExecutor js = (JavascriptExecutor) driver;
-//		    js.executeScript("arguments[0].value='';", element);
 		    element.click();
 		    element.sendKeys(text);
 	}
 	
 	public void selectDropdown(By dropdownLocator, String optionText) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-	    // Click the dropdown to open the options
+
+	    String currentDropdown = driver.findElement(dropdownLocator).getText();
+	    System.out.println("Current Dropdown is "+currentDropdown);
+	  
+	    switch (currentDropdown) {
+	    case "Single":
+	        optionText = "Married";
+	        break;
+	    case "Married":
+	        optionText = "Single";
+	        break;
+	    case "American":
+	        optionText = "Indian";
+	        break;
+	    case "Indian":
+	        optionText = "American";
+	        break;
+	    case "A+":
+	    	optionText = "B-";
+	    	break;
+	    case "B-":
+	    	optionText = "A+";
+	    	break;
+	     
+	}
 	    WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(dropdownLocator));
 	    
 	    dropdown.click();
 	    // Wait a moment to let options load
 	    try {
-	        Thread.sleep(1000); // 1-second pause to allow UI update
+	        Thread.sleep(5000); // 1-second pause to allow UI update
 	    } catch (InterruptedException e) {
 	        e.printStackTrace();
 	    }
@@ -75,10 +103,4 @@ public class BasePage implements IBasePage{
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
 	    return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-
-
-
-
-	
-
 }

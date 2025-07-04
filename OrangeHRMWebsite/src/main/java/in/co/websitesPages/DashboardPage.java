@@ -1,19 +1,17 @@
 package in.co.websitesPages;
 
 import java.time.Duration;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DashboardPage extends LoginPage{
+import commonLibs.implementation.BasePage;
 
+public class DashboardPage extends BasePage{
 	
-	
-	private By clicking = By.xpath("//li[6]");
+	private By click = By.xpath("//li[6]");
 	private By firstname = By.xpath("//input[@name='firstName']");
 	private By middlename = By.xpath("//input[@name='middleName']");
 	private By lastname = By.xpath("//input[@name='lastName']");
@@ -30,19 +28,22 @@ public class DashboardPage extends LoginPage{
 	private By MaritalStatus = By.xpath("(//div[@class='oxd-select-wrapper'])[2]");
 	WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	private By firstButton = By.xpath("//button[@data-v-10d463b7 and @data-v-6653c066]");
-
+	private By Bloodtest = By.xpath("(//div[@class='oxd-select-wrapper'])[3]");
+	private By Test_Field = By.xpath("//label[contains(text(), 'Test_Field')]/following::input[1]");
+	private By secondButton = By.xpath("(//*[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space'])[2]");
+	  
 	public DashboardPage(WebDriver driver) {
 		super(driver);
 		this.wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	}
 	public void clickonMyInfo()
 	{
-		WebElement clicker = wait.until(ExpectedConditions.elementToBeClickable(clicking)); 
+		WebElement clicker = wait.until(ExpectedConditions.elementToBeClickable(click)); 
 		clicker.click();
 	}
 	public void firstname(String text)
 	{
-		 enterText(firstname,text);
+		enterText(firstname,text);
 	}
 	public void middlename(String text)
 	{
@@ -83,10 +84,23 @@ public class DashboardPage extends LoginPage{
 		selectDropdown(Nationality, text);
 	}
 	public void MaritalStatus(String text) {
+		
 		selectDropdown(MaritalStatus,text);
 	}
 	public void saveButton()
 	{
 		click(firstButton);
+	}
+	public void Bloodtest(String text)
+	{
+		selectDropdown(Bloodtest,text);
+	}
+	public void Test_Field(String text)
+	{
+		enterText(Test_Field,text);
+	}
+	public void saveButton2()
+	{
+		click(secondButton);
 	}
 }

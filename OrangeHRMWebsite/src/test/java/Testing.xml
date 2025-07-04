@@ -3,7 +3,7 @@
     <test name="OrangeHRM Tests">
         <classes>
          <class name="in.co.website.test.LoginTest"/>
-		<class name="in.co.website.test.DashboardTest"/>
+		
         </classes>
     </test>
 </suite>

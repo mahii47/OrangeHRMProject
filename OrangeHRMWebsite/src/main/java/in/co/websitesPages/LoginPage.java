@@ -14,8 +14,8 @@ public class LoginPage extends BasePage{
 	
 	WebDriverWait wait;
 	
-	private By usernamefiled =  By.name("username");
-	private By passwordfiled = By.name("password");
+	private By usernamefield =  By.name("username");
+	private By passwordfield = By.name("password");
 	private By clickLogin = By.xpath("//button[@type='submit']");
 	
 	
@@ -28,13 +28,13 @@ public class LoginPage extends BasePage{
 
 	public void enterUsername(String username)
 	{
-		enterText(usernamefiled,username);
+		enterText(usernamefield,username);
 		//WebElement userFiled = wait.until(ExpectedConditions.visibilityOfElementLocated(usernamefiled));
 	}
 	
 	public void enterPassword(String password)
 	{
-		enterText(passwordfiled,password);
+		enterText(passwordfield,password);
 	}
 
 	public void ClickButton()
