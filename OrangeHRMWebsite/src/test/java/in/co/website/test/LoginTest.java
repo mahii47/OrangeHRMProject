@@ -70,7 +70,6 @@ public class LoginTest {
 				isLoginSuccessful = true;
 			}
 		}
-		
 		catch(Exception e)
 		{
 			isLoginSuccessful = true;
