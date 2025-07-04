@@ -51,7 +51,6 @@ public class LoginTest {
 	}
 	
 	
-	
 	@Test(dataProvider = "loginData")
 	public void loginTest(String username,String password,boolean expectedResult)
 	{
