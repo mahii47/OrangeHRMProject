@@ -61,6 +61,7 @@ public class LoginTest {
 		boolean isLoginSuccessful;
 		
 		try {
+			
 			String errormsg = loginPage.errorMessage();
 			if( errormsg.contains("Invalid credentials"))
 			{
