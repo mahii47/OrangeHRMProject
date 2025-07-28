@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-04T13:58:56 IST" name="TestSuite" finished-at="2025-07-04T13:59:55 IST" duration-ms="58799">
+  <suite started-at="2025-07-23T23:23:51 IST" name="TestSuite" finished-at="2025-07-23T23:25:16 IST" duration-ms="84817">
     <groups>
     </groups>
-    <test started-at="2025-07-04T13:58:56 IST" name="OrangeHRM Tests" finished-at="2025-07-04T13:59:55 IST" duration-ms="58799">
+    <test started-at="2025-07-23T23:23:51 IST" name="OrangeHRM Tests" finished-at="2025-07-23T23:25:16 IST" duration-ms="84817">
       <class name="in.co.website.test.LoginTest">
-        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:58:56 IST" name="invokeBrowser" finished-at="2025-07-04T13:59:05 IST" duration-ms="8685" status="PASS">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:23:51 IST" name="invokeBrowser" finished-at="2025-07-23T23:24:13 IST" duration-ms="21997" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:59:05 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-04T13:59:11 IST" duration-ms="6177" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:13 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:22 IST" duration-ms="9156" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,7 +32,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:59:11 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-04T13:59:17 IST" duration-ms="5550" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:22 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:29 IST" duration-ms="7261" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:59:17 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-04T13:59:22 IST" duration-ms="5546" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:29 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:36 IST" duration-ms="6574" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -74,7 +74,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:59:22 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-04T13:59:28 IST" duration-ms="5559" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:36 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:43 IST" duration-ms="7083" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -95,7 +95,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:59:28 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-04T13:59:33 IST" duration-ms="5566" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:43 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:50 IST" duration-ms="7357" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -116,7 +116,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:59:33 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-04T13:59:39 IST" duration-ms="5544" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:50 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:58 IST" duration-ms="7426" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -137,7 +137,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:59:39 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-04T13:59:55 IST" duration-ms="15827" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:58 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:25:15 IST" duration-ms="17162" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -158,7 +158,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-04T13:59:55 IST" name="closeBrowser" finished-at="2025-07-04T13:59:55 IST" duration-ms="298" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:25:15 IST" name="closeBrowser" finished-at="2025-07-23T23:25:16 IST" duration-ms="569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
