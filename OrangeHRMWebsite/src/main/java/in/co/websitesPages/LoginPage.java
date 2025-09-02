@@ -18,30 +18,24 @@ public class LoginPage extends BasePage{
 	private By passwordfield = By.name("password");
 	private By clickLogin = By.xpath("//button[@type='submit']");
 	
-	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	}
-
 	public void enterUsername(String username)
 	{
 		enterText(usernamefield,username);
-		//WebElement userFiled = wait.until(ExpectedConditions.visibilityOfElementLocated(usernamefiled));
 	}
-	
 	public void enterPassword(String password)
 	{
 		enterText(passwordfield,password);
 	}
-
 	public void ClickButton()
 	{
 		click(clickLogin);
 	}
-	
 	public String  errorMessage()
 	{
 		WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(10));

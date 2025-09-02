@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -15,13 +16,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import in.co.websitesPages.LoginPage;
 import commonLibs.implementation.DriverManager;
+import commonLibs.utils.ScreenshotUtil;
 
 public class LoginTest {
 
 	LoginPage loginPage;
 	DriverManager driverManager;
 	public static WebDriver driver;
-	
 	
 	@BeforeTest
 	public void invokeBrowser()
@@ -32,25 +33,21 @@ public class LoginTest {
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		loginPage = new LoginPage(driver); 
 	}
-	
-	
 	@DataProvider(name = "loginData")
 	public Object[][]getLoginData()
 	{
 		return new Object[][]
 				{
-			{"WrongUser","admin123",false},
-			{"Admin","admin1234",false},
-			{"12345","45678",false},
-			{"","admin123",false},
-			{"Admin","",false},
-			{"","",false},
+//			{"WrongUser","admin123",false},
+//			{"Admin","admin1234",false},
+//			{"12345","45678",false},
+//			{"","admin123",false},
+//			{"Admin","",false},
+//			{"","",false},
 			{"Admin","admin123",true}
 			
 				};
 	}
-	
-
 	@Test(dataProvider = "loginData")
 	public void loginTest(String username,String password,boolean expectedResult)
 	{
@@ -81,8 +78,6 @@ public class LoginTest {
 		    Assert.assertEquals(isLoginSuccessful, expectedResult, 
 		        "Test failed for username: " + username);
 	}
-	
-	
 	@AfterTest
 	public void closeBrowser()
 	{

@@ -9,7 +9,7 @@ public class DriverManager {
 	WebDriver driver;
 	public WebDriver initializeDriver()
 	{
-		WebDriverManager.chromedriver().setup(); //it will start the chrome.
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		return driver;	
 	}

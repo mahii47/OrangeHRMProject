@@ -8,5 +8,6 @@ public interface IBasePage {
 	void enterText(By locator,String text);
 	void selectDropdown(By locator,String text);
 	WebElement waitForElementClickable(By locator, int timeoutInSeconds);
+	void addattachment(By locator);
 	
 }

@@ -1,143 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-23T23:23:51 IST" name="TestSuite" finished-at="2025-07-23T23:25:16 IST" duration-ms="84817">
+  <suite started-at="2025-09-02T23:33:15 IST" name="TestSuite" finished-at="2025-09-02T23:34:00 IST" duration-ms="44497">
     <groups>
     </groups>
-    <test started-at="2025-07-23T23:23:51 IST" name="OrangeHRM Tests" finished-at="2025-07-23T23:25:16 IST" duration-ms="84817">
+    <test started-at="2025-09-02T23:33:15 IST" name="OrangeHRM Tests" finished-at="2025-09-02T23:34:00 IST" duration-ms="44497">
+      <class name="in.co.website.test.DashboardTest">
+        <test-method signature="ClickonMyList()[pri:2, instance:in.co.website.test.DashboardTest@ed7f8b4]" started-at="2025-09-02T23:33:41 IST" name="ClickonMyList" finished-at="2025-09-02T23:33:43 IST" depends-on-methods="loginTest" duration-ms="1870" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickonMyList -->
+        <test-method signature="EnterForm()[pri:3, instance:in.co.website.test.DashboardTest@ed7f8b4]" started-at="2025-09-02T23:33:43 IST" name="EnterForm" finished-at="2025-09-02T23:33:59 IST" depends-on-methods="in.co.website.test.DashboardTest.ClickonMyList" duration-ms="16141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EnterForm -->
+      </class> <!-- in.co.website.test.DashboardTest -->
       <class name="in.co.website.test.LoginTest">
-        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:23:51 IST" name="invokeBrowser" finished-at="2025-07-23T23:24:13 IST" duration-ms="21997" status="PASS">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-02T23:33:15 IST" name="invokeBrowser" finished-at="2025-09-02T23:33:24 IST" duration-ms="9032" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:13 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:22 IST" duration-ms="9156" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[WrongUser]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:22 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:29 IST" duration-ms="7261" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin1234]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:29 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:36 IST" duration-ms="6574" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[12345]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[45678]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:36 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:43 IST" duration-ms="7083" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:43 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:50 IST" duration-ms="7357" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:50 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:24:58 IST" duration-ms="7426" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:24:58 IST" name="loginTest" data-provider="loginData" finished-at="2025-07-23T23:25:15 IST" duration-ms="17162" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-02T23:33:24 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-02T23:33:41 IST" duration-ms="16801" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -158,7 +42,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:in.co.website.test.LoginTest@1757cd72]" started-at="2025-07-23T23:25:15 IST" name="closeBrowser" finished-at="2025-07-23T23:25:16 IST" duration-ms="569" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-02T23:33:59 IST" name="closeBrowser" finished-at="2025-09-02T23:34:00 IST" duration-ms="570" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

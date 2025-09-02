@@ -1,5 +1,4 @@
 package commonLibs.implementation;
-
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -16,7 +15,8 @@ import commonLibs.contracts.IBasePage;
 
 public class BasePage implements IBasePage{
 	protected WebDriver driver;
-	WebDriver wait;
+	//WebDriver wait;
+	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	
 	public BasePage(WebDriver driver) 
 	{
@@ -25,7 +25,6 @@ public class BasePage implements IBasePage{
 	@Override
 	public void click(By locator)
 	{
-		// TODO Auto-generated method stub
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement Button = wait.until(ExpectedConditions.elementToBeClickable((locator)));
 		Button.click();
@@ -35,7 +34,6 @@ public class BasePage implements IBasePage{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	@Override
 	public void enterText(By locator, String text)
@@ -75,22 +73,20 @@ public class BasePage implements IBasePage{
 	    case "B-":
 	    	optionText = "A+";
 	    	break;
-	     
 	}
 	    WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(dropdownLocator));
 	    
 	    dropdown.click();
-	    // Wait a moment to let options load
+	  
 	    try {
-	        Thread.sleep(5000); // 1-second pause to allow UI update
+	        Thread.sleep(5000); 
 	    } catch (InterruptedException e) {
 	        e.printStackTrace();
 	    }
-	    // Updated option locator based on common dropdown structures
 	    By optionLocator = By.xpath("//div[@class='oxd-select-option']//span[contains(text(),'" + optionText + "')]");
-	    // Find the option
+
 	    WebElement option = wait.until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
-	    // Click using JavaScript to avoid UI issues
+	   
 	    try {
 	        option.click();
 	    } catch (Exception e) {
@@ -98,9 +94,21 @@ public class BasePage implements IBasePage{
 	        js.executeScript("arguments[0].click();", option);
 	    }
 	}
+	
+	
 	@Override
 	public WebElement waitForElementClickable(By locator, int timeoutInSeconds) {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
 	    return wait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
+	@Override
+	public void addattachment(By locator) {
+		// TODO Auto-generated method stub
+	
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement uploadInput = wait.until(
+		    ExpectedConditions.presenceOfElementLocated(locator)
+		);
+		uploadInput.sendKeys("C:\\Users\\mahma\\Downloads\\Mahesh_Passport.jpg");
 	}
 }

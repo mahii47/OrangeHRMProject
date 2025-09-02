@@ -1,5 +1,4 @@
 package in.co.websitesPages;
-
 import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +30,13 @@ public class DashboardPage extends BasePage{
 	private By Bloodtest = By.xpath("(//div[@class='oxd-select-wrapper'])[3]");
 	private By Test_Field = By.xpath("//label[contains(text(), 'Test_Field')]/following::input[1]");
 	private By secondButton = By.xpath("(//*[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space'])[2]");
-	  
+	private By attachmentadd = By.xpath("//*[text()=' Add ']");  
+	private By BrowserButton = By.xpath("//input[@type='file']");
+	private By thirdButton =By.xpath("(//*[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space'])[3]");
+	private By profile = By.xpath("//*[@class='employee-image'][1]");
+	private By profile2 = By.xpath("//input[@type='file']");
+	private By fourthButton = By.xpath("//*[text()=' Save ']");
+	
 	public DashboardPage(WebDriver driver) {
 		super(driver);
 		this.wait = new WebDriverWait(driver,Duration.ofSeconds(10));
@@ -102,5 +107,23 @@ public class DashboardPage extends BasePage{
 	public void saveButton2()
 	{
 		click(secondButton);
+	}
+	
+	public void Attachments()
+	{
+		click(attachmentadd);
+		addattachment(BrowserButton);
+	}
+	
+	public void saveButton3()
+	{
+		click(thirdButton);
+	}
+	
+	public void profilepic()
+	{
+		click(profile);
+		addattachment(profile2);
+		click(fourthButton);
 	}
 }

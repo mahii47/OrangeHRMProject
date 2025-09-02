@@ -10,13 +10,12 @@ public class DashboardTest{
 	 WebDriver driver;
 	 DashboardPage dashboardPage;
 	 
-	@Test(priority = 2,dependsOnMethods= "ValidLogin")
+	@Test(priority = 2,dependsOnMethods= "loginTest")
 	public void ClickonMyList()
 	{
 		dashboardPage = new DashboardPage(LoginTest.driver);
 		dashboardPage.clickonMyInfo();
 	}
-	
 	@Test(priority = 3,dependsOnMethods = "ClickonMyList")
 	public void EnterForm() throws InterruptedException
 	{
@@ -24,14 +23,10 @@ public class DashboardTest{
 		dashboardPage.firstname("Mahesh");	
 		dashboardPage.middlename("Vijay");
 		dashboardPage.lastname("Mankar");
-	//	dashboardPage.nickname("mahii");
 		dashboardPage.employeeId("1357");
 		dashboardPage.otherId("247");
 		dashboardPage.licenseNumber("4567890");
 		dashboardPage.licenseExpiryDate("2024-08-07");
-		//dashboardPage.sinNumber("12345");
-		//dashboardPage.ssnNumber("45678");
-		//dashboardPage.militaryService("45678");
 		dashboardPage.dateOfBirth("2025-12-03");
 		dashboardPage.MaritalStatus("Married");
 		dashboardPage.Nationality("Indian");
@@ -39,6 +34,8 @@ public class DashboardTest{
 		dashboardPage.Bloodtest("A+");
 		dashboardPage.Test_Field("12345");
 		dashboardPage.saveButton2();
-		
+		dashboardPage.Attachments();
+		dashboardPage.saveButton3();
+		dashboardPage.profilepic();
 	}
 }
