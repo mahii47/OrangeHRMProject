@@ -2,26 +2,26 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-02T23:33:15 IST" name="TestSuite" finished-at="2025-09-02T23:34:00 IST" duration-ms="44497">
+  <suite started-at="2025-09-03T00:19:00 IST" name="TestSuite" finished-at="2025-09-03T00:20:29 IST" duration-ms="89571">
     <groups>
     </groups>
-    <test started-at="2025-09-02T23:33:15 IST" name="OrangeHRM Tests" finished-at="2025-09-02T23:34:00 IST" duration-ms="44497">
+    <test started-at="2025-09-03T00:19:00 IST" name="OrangeHRM Tests" finished-at="2025-09-03T00:20:29 IST" duration-ms="89571">
       <class name="in.co.website.test.DashboardTest">
-        <test-method signature="ClickonMyList()[pri:2, instance:in.co.website.test.DashboardTest@ed7f8b4]" started-at="2025-09-02T23:33:41 IST" name="ClickonMyList" finished-at="2025-09-02T23:33:43 IST" depends-on-methods="loginTest" duration-ms="1870" status="PASS">
+        <test-method signature="ClickonMyList()[pri:2, instance:in.co.website.test.DashboardTest@ed7f8b4]" started-at="2025-09-03T00:19:27 IST" name="ClickonMyList" finished-at="2025-09-03T00:19:28 IST" depends-on-methods="loginTest" duration-ms="1359" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClickonMyList -->
-        <test-method signature="EnterForm()[pri:3, instance:in.co.website.test.DashboardTest@ed7f8b4]" started-at="2025-09-02T23:33:43 IST" name="EnterForm" finished-at="2025-09-02T23:33:59 IST" depends-on-methods="in.co.website.test.DashboardTest.ClickonMyList" duration-ms="16141" status="PASS">
+        <test-method signature="EnterForm()[pri:3, instance:in.co.website.test.DashboardTest@ed7f8b4]" started-at="2025-09-03T00:19:28 IST" name="EnterForm" finished-at="2025-09-03T00:20:29 IST" depends-on-methods="in.co.website.test.DashboardTest.ClickonMyList" duration-ms="60393" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterForm -->
       </class> <!-- in.co.website.test.DashboardTest -->
       <class name="in.co.website.test.LoginTest">
-        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-02T23:33:15 IST" name="invokeBrowser" finished-at="2025-09-02T23:33:24 IST" duration-ms="9032" status="PASS">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-03T00:19:00 IST" name="invokeBrowser" finished-at="2025-09-03T00:19:09 IST" duration-ms="9340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-02T23:33:24 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-02T23:33:41 IST" duration-ms="16801" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,boolean)[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-03T00:19:09 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-03T00:19:27 IST" duration-ms="17816" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -42,7 +42,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-02T23:33:59 IST" name="closeBrowser" finished-at="2025-09-02T23:34:00 IST" duration-ms="570" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:in.co.website.test.LoginTest@757277dc]" started-at="2025-09-03T00:20:29 IST" name="closeBrowser" finished-at="2025-09-03T00:20:29 IST" duration-ms="572" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

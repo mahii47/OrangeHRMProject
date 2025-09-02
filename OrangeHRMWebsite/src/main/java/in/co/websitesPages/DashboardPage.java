@@ -120,8 +120,9 @@ public class DashboardPage extends BasePage{
 		click(thirdButton);
 	}
 	
-	public void profilepic()
+	public void profilepic() throws InterruptedException
 	{
+		driver.navigate().refresh();
 		click(profile);
 		addattachment(profile2);
 		click(fourthButton);
