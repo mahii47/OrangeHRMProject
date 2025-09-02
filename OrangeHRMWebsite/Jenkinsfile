@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'   
-        jdk 'JDK11'     
+        maven 'Maven'    
+        jdk 'JDK11'      
     }
 
     stages {
@@ -16,14 +16,15 @@ pipeline {
         stage('Build') {
             steps {
                 dir('OrangeHRMWebsite') {  
-                    sh 'mvn clean install -DskipTests=true'
+                    sh 'mvn clean install -DskipTests'
                 }
             }
         }
 
         stage('Run Tests') {
             steps {
-                dir('OrangeHRMWebsite') {  
+                dir('OrangeHRMWebsite') {
+                    
                     sh 'mvn test'
                 }
             }
@@ -32,14 +33,15 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: '**/target/screenshots/*.png', allowEmptyArchive: true
-            junit '**/target/surefire-reports/*.xml'
+            
+            archiveArtifacts artifacts: 'OrangeHRMWebsite/target/screenshots/*.png', allowEmptyArchive: true
+            junit 'OrangeHRMWebsite/target/surefire-reports/*.xml'
         }
         failure {
-            echo " Build Failed! Check screenshots/logs."
+            echo "Build Failed! Check screenshots/logs in Jenkins."
         }
         success {
-            echo "Build Passed!"
+            echo " Build Passed!"
         }
     }
 }
