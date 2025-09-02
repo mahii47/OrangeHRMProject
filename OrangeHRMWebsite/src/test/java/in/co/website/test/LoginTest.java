@@ -38,12 +38,12 @@ public class LoginTest {
 	{
 		return new Object[][]
 				{
-//			{"WrongUser","admin123",false},
-//			{"Admin","admin1234",false},
-//			{"12345","45678",false},
-//			{"","admin123",false},
-//			{"Admin","",false},
-//			{"","",false},
+			{"WrongUser","admin123",false},
+			{"Admin","admin1234",false},
+			{"12345","45678",false},
+			{"","admin123",false},
+			{"Admin","",false},
+			{"","",false},
 			{"Admin","admin123",true}
 			
 				};

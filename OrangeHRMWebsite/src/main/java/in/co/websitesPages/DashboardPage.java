@@ -108,18 +108,15 @@ public class DashboardPage extends BasePage{
 	{
 		click(secondButton);
 	}
-	
 	public void Attachments()
 	{
 		click(attachmentadd);
 		addattachment(BrowserButton);
 	}
-	
 	public void saveButton3()
 	{
 		click(thirdButton);
 	}
-	
 	public void profilepic() throws InterruptedException
 	{
 		driver.navigate().refresh();
