@@ -1,35 +1,45 @@
 pipeline {
     agent any
-    
+
+    tools {
+        maven 'Maven'   
+        jdk 'JDK11'     
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/mahii47/OrangeHRMProject'
+                git branch: 'main', url: 'https://github.com/mahii47/OrangeHRMProject.git'
             }
         }
 
         stage('Build') {
             steps {
-				dir('OrangeHRMWebsite')
-                sh 'mvn clean install -DskipTests'
+                dir('OrangeHRMWebsite') {  
+                    sh 'mvn clean install -DskipTests=true'
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'mvn test'
+                dir('OrangeHRMWebsite') {  
+                    sh 'mvn test'
+                }
             }
         }
     }
-    
+
     post {
         always {
-            archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
+            archiveArtifacts artifacts: '**/target/screenshots/*.png', allowEmptyArchive: true
             junit '**/target/surefire-reports/*.xml'
         }
         failure {
-            echo 'Build Failed! Check screenshots/logs.'
-            archiveArtifacts artifacts: '**/screenshots/*.png', allowEmptyArchive: true
+            echo " Build Failed! Check screenshots/logs."
+        }
+        success {
+            echo "Build Passed!"
         }
     }
 }
