@@ -11,7 +11,6 @@ public class DriverManager {
 	public WebDriver initializeDriver()
 	{
 		WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
 		driver = new ChromeDriver();
 		return driver;	
 	}
