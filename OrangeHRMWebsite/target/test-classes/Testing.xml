@@ -1,13 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="TestSuite">
-<listeners>
-        <listener class-name="commonLibs.utils.TestListener"/>
-</listeners>
+
     <test name="OrangeHRM Tests">
         <classes>
          <class name="in.co.website.test.LoginTest"/>
-		<class name="in.co.website.test.DashboardTest"/>
+         
         </classes>
     </test>
-   
 </suite>

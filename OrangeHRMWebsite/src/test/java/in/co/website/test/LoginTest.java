@@ -1,11 +1,17 @@
 package in.co.website.test;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import commonLibs.utils.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
+
 import org.testng.annotations.Test;
 import in.co.websitesPages.LoginPage;
+import testData.DataProviders;
+import commonLibs.implementation.BasePage;
 import commonLibs.implementation.DriverManager;
 
 public class LoginTest {
@@ -23,22 +29,7 @@ public class LoginTest {
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		loginPage = new LoginPage(driver); 
 	}
-	@DataProvider(name = "loginData")
-	public Object[][]getLoginData()
-	{
-		return new Object[][]
-				{
-			{"WrongUser","admin123",false},
-			{"Admin","admin1234",false},
-			{"12345","45678",false},
-			{"","admin123",false},
-			{"Admin","",false},
-			{"","",false},
-			{"Admin","admin123",true}
-			
-				};
-	}
-	@Test(dataProvider = "loginData")
+	@Test(dataProvider = "loginDataFromDB",dataProviderClass = DataProviders.class)
 	public void loginTest(String username,String password,boolean expectedResult)
 	{
 		loginPage.enterUsername(username);
@@ -48,25 +39,21 @@ public class LoginTest {
 		boolean isLoginSuccessful;
 		
 		try {
-			
-			String errormsg = loginPage.errorMessage();
-			if( errormsg.contains("Invalid credentials"))
-			{
-			isLoginSuccessful = false;
-			}
-			else {
-				isLoginSuccessful = true;
-			}
-		}
-		catch(Exception e)
-		{
-			isLoginSuccessful = true;
-		}
-		
-		  System.out.println("Testing with: " + username + " | Expected: " + expectedResult + " | Actual: " + isLoginSuccessful);
+            String errormsg = loginPage.errorMessage();
+            if (errormsg.contains("Invalid credentials")) {
+                isLoginSuccessful = false;
+            } else {
+                isLoginSuccessful = true;
+            }
+        } catch (Exception e) {
+            isLoginSuccessful = true;
+        }
 
-		    Assert.assertEquals(isLoginSuccessful, expectedResult, 
-		        "Test failed for username: " + username);
+        System.out.println("Testing with: " + username + " | Expected: " 
+                + expectedResult + " | Actual: " + isLoginSuccessful);
+
+        Assert.assertEquals(isLoginSuccessful, expectedResult,
+                "Test failed for username: " + username);
 	}
 	@AfterTest
 	public void closeBrowser()
