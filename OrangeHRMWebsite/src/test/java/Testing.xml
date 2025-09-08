@@ -9,5 +9,4 @@
 		<class name="in.co.website.test.DashboardTest"/>
         </classes>
     </test>
-   
 </suite>
