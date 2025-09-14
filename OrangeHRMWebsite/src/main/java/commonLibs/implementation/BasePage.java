@@ -63,11 +63,17 @@ public class BasePage implements IBasePage{
 	    case "Indian":
 	        optionText = "American";
 	        break;
+	    case "Brazilian":
+	    	optionText = "Indian";
+	    	break;
 	    case "A+":
 	    	optionText = "B-";
 	    	break;
 	    case "B-":
 	    	optionText = "A+";
+	    	break;
+	    default:
+	    	optionText = "Indian";
 	    	break;
 	}
 	    WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(dropdownLocator));
@@ -103,7 +109,7 @@ public class BasePage implements IBasePage{
 		WebElement uploadInput = wait.until(
 		    ExpectedConditions.presenceOfElementLocated(locator)
 		);
-		uploadInput.sendKeys("C:\\Users\\mahma\\Downloads\\Mahesh_Passport.jpg1");
+		uploadInput.sendKeys("C:\\Users\\mahma\\Downloads\\Mahesh_Passport.jpg");
 	}
 	
 	

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import commonLibs.utils.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -25,6 +26,13 @@ public class LoginTest {
 	{
 		driverManager = new DriverManager();
 		driver = driverManager.initializeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("--incognito"); 
+		options.addArguments("--start-maximized"); 
+		options.addArguments("--disable-notifications");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--no-sandbox");
 		driver.manage().window().maximize();
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		loginPage = new LoginPage(driver); 

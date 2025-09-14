@@ -68,7 +68,7 @@ public class DashboardPage extends BasePage{
 	    enterText(otherId, text);
 	}
 	public void licenseNumber(String text) {
-	    enterText(licenseNumber, text);
+	//    enterText(licenseNumber, text);
 	}
 	public void licenseExpiryDate(String text) {
 	    enterText(licenseExpiryDate, text);
@@ -122,6 +122,7 @@ public class DashboardPage extends BasePage{
 		driver.navigate().refresh();
 		click(profile);
 		addattachment(profile2);
+		Thread.sleep(5000);
 		click(fourthButton);
 	}
 }
