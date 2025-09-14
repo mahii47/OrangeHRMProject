@@ -24,7 +24,6 @@ pipeline {
         stage('Run Tests') {
             steps {
                 dir('OrangeHRMWebsite') {
-                    
                     sh 'mvn test'
                 }
             }
@@ -33,15 +32,40 @@ pipeline {
 
     post {
         always {
-            
+            // Collect reports and screenshots
             archiveArtifacts artifacts: 'OrangeHRMWebsite/target/screenshots/*.png', allowEmptyArchive: true
             junit 'OrangeHRMWebsite/target/surefire-reports/*.xml'
         }
+
         failure {
             echo "Build Failed! Check screenshots/logs in Jenkins."
+            emailext(
+                to: 'mahmankar333@gmail.com',
+                subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
+                    <h2 style="color:#d9534f;">Build Failure Notification</h2>
+                    Hello Mahii,<br><br>
+                    The Jenkins build <b>${env.JOB_NAME} #${env.BUILD_NUMBER}</b> has <b>FAILED</b>.<br><br>
+                    
+                    <b>Build Details:</b><br>
+                    - Job: ${env.JOB_NAME}<br>
+                    - Build Number: ${env.BUILD_NUMBER}<br>
+                    - URL: <a href='${env.BUILD_URL}'>Click here to view logs</a><br>
+                    - Failed Project: OrangeHRMWebsite<br><br>
+                    
+                    <b>Artifacts:</b><br>
+                    - Screenshots: Check Jenkins artifacts section.<br>
+                    - Test Reports: Available under "Test Result" in Jenkins.<br><br>
+                    
+                    Regards,<br>
+                    Jenkins CI/CD
+                """,
+                mimeType: 'text/html'
+            )
         }
+
         success {
-            echo " Build Passed!"
+            echo "Build Passed!"
         }
     }
 }
