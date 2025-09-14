@@ -7,9 +7,15 @@
         <methods>
           <include name="invokeBrowser"/>
           <include name="closeBrowser"/>
-          <include name="loginTest"/>
+          <include name="loginTest" invocation-numbers="0 1 2 3 4 5 6"/>
         </methods>
       </class> <!-- in.co.website.test.LoginTest -->
+      <class name="in.co.website.test.DashboardTest">
+        <methods>
+          <include name="ClickonMyList"/>
+          <include name="EnterForm"/>
+        </methods>
+      </class> <!-- in.co.website.test.DashboardTest -->
     </classes>
   </test> <!-- OrangeHRM Tests(failed) -->
 </suite> <!-- Failed suite [TestSuite] -->

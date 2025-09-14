@@ -20,7 +20,7 @@ public class DashboardTest{
 	public void EnterForm() throws InterruptedException
 	{
 		Thread.sleep(5000);
-		dashboardPage.firstname("Mahesh1");	
+		dashboardPage.firstname("Mahesh");	
 		dashboardPage.middlename("Vijay");
 		dashboardPage.lastname("Mankar");
 		dashboardPage.employeeId("1357");
