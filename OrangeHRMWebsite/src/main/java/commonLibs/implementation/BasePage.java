@@ -1,16 +1,12 @@
 package commonLibs.implementation;
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import commonLibs.contracts.IBasePage;
 
 public class BasePage implements IBasePage{
@@ -94,8 +90,6 @@ public class BasePage implements IBasePage{
 	        js.executeScript("arguments[0].click();", option);
 	    }
 	}
-	
-	
 	@Override
 	public WebElement waitForElementClickable(By locator, int timeoutInSeconds) {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
@@ -111,4 +105,6 @@ public class BasePage implements IBasePage{
 		);
 		uploadInput.sendKeys("C:\\Users\\mahma\\Downloads\\Mahesh_Passport.jpg");
 	}
+	
+	
 }
