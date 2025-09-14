@@ -7,7 +7,7 @@
         <methods>
           <include name="invokeBrowser"/>
           <include name="closeBrowser"/>
-          <include name="loginTest" invocation-numbers="5 6"/>
+          <include name="loginTest"/>
         </methods>
       </class> <!-- in.co.website.test.LoginTest -->
       <class name="in.co.website.test.DashboardTest">

@@ -1,18 +1,13 @@
 package in.co.website.test;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import commonLibs.utils.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
 import org.testng.annotations.Test;
 import in.co.websitesPages.LoginPage;
 import testData.DataProviders;
-import commonLibs.implementation.BasePage;
 import commonLibs.implementation.DriverManager;
 
 public class LoginTest {
@@ -24,16 +19,16 @@ public class LoginTest {
 	@BeforeTest
 	public void invokeBrowser()
 	{
-		driverManager = new DriverManager();
-		driver = driverManager.initializeDriver();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
-		options.addArguments("--incognito"); 
-		options.addArguments("--start-maximized"); 
+		options.addArguments("--window-size=1920,1080");
 		options.addArguments("--disable-notifications");
 		options.addArguments("--disable-gpu");
 		options.addArguments("--no-sandbox");
-		driver.manage().window().maximize();
+		
+		driverManager = new DriverManager();
+		driver = driverManager.initializeDriver(options);
+		driverManager.setDriver(driver);
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		loginPage = new LoginPage(driver); 
 	}
