@@ -72,6 +72,15 @@ public class BasePage implements IBasePage{
 	    case "B-":
 	    	optionText = "A+";
 	    	break;
+	    case "O+":
+	    	optionText = "A+";
+	    	break;
+	    case "A-":
+	    	optionText = "A+";
+	    	break;
+	    case "B+":
+	    	optionText = "A+";
+	    	break;
 	    default:
 	    	optionText = "Indian";
 	    	break;
