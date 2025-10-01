@@ -18,7 +18,7 @@ public class DashboardPage extends BasePage{
 	private By employeeId = By.xpath("//label[contains(text(), 'Employee Id')]/following::input[1]");
 	private By otherId = By.xpath("//label[contains(text(), 'Other Id')]/following::input[1]");
 	private By licenseNumber = By.xpath("//label[contains(text(),\"Driver's License Number\")]/following::input[1]");
-	private By licenseExpiryDate = By.xpath("//label[contains(text(), 'License Expiry Date')]/following::input[1]");
+	private By licenseExpiryDate = 	By.xpath("//label[contains(text(), 'License Expiry Date')]/following::input[1]");
 	private By ssnNumber = By.xpath("//label[contains(text(), 'SSN Number')]/following::input[1]");
 	private By sinNumber = By.xpath("//label[contains(text(), 'SIN Number')]/following::input[1]");
 	private By dateOfBirth = By.xpath("//label[contains(text(), 'Date of Birth')]/following::input[1]");
@@ -36,6 +36,7 @@ public class DashboardPage extends BasePage{
 	private By profile = By.xpath("//*[@class='employee-image'][1]");
 	private By profile2 = By.xpath("//input[@type='file']");
 	private By fourthButton = By.xpath("//*[text()=' Save ']");
+	private By Gender = By.xpath("//*[text()='Male']");
 	
 	public DashboardPage(WebDriver driver) {
 		super(driver);
@@ -68,7 +69,7 @@ public class DashboardPage extends BasePage{
 	    enterText(otherId, text);
 	}
 	public void licenseNumber(String text) {
-	//    enterText(licenseNumber, text);
+	    enterText(licenseNumber, text);
 	}
 	public void licenseExpiryDate(String text) {
 	    enterText(licenseExpiryDate, text);
@@ -81,6 +82,10 @@ public class DashboardPage extends BasePage{
 	}
 	public void dateOfBirth(String text) {
 	    enterText(dateOfBirth, text);
+	}
+	public void Gender()
+	{
+		click(Gender);
 	}
 	public void militaryService(String text) {
 	    enterText(militaryService,text);

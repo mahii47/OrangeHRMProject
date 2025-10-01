@@ -10,4 +10,5 @@ public interface IBasePage {
 	WebElement waitForElementClickable(By locator, int timeoutInSeconds);
 	void addattachment(By locator);
 	
+	
 }

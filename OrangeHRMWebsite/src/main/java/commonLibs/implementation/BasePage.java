@@ -118,8 +118,6 @@ public class BasePage implements IBasePage{
 		WebElement uploadInput = wait.until(
 		    ExpectedConditions.presenceOfElementLocated(locator)
 		);
-		uploadInput.sendKeys("C:\\Users\\mahma\\Downloads\\Mahesh_Passport.jpg");
+		uploadInput.sendKeys("C:\\Users\\mahma\\Downloads\\Profile.jpg");
 	}
-	
-	
 }

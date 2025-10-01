@@ -25,9 +25,10 @@ public class DashboardTest{
 		dashboardPage.lastname("Mankar");
 		dashboardPage.employeeId("1357");
 		dashboardPage.otherId("247");
-		dashboardPage.licenseNumber("4567890");
 		dashboardPage.licenseExpiryDate("2024-08-07");
+		dashboardPage.licenseNumber("MH12345");
 		dashboardPage.dateOfBirth("2025-12-03");
+		dashboardPage.Gender();
 		dashboardPage.MaritalStatus("Married");
 		dashboardPage.Nationality("Indian");
 		dashboardPage.saveButton();
