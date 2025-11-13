@@ -1,18 +1,12 @@
 package in.co.website.test;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import commonLibs.utils.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
 import org.testng.annotations.Test;
 import in.co.websitesPages.LoginPage;
 import testData.DataProviders;
-import commonLibs.implementation.BasePage;
 import commonLibs.implementation.DriverManager;
 
 public class LoginTest {
